@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewPostViewModel"
+            type="edu.skku.cs.final_project.ViewPostViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/off_white"
+        tools:context=".ViewPostActivity">
+
+        <TextView
+            android:id="@+id/textView_viewPost_title"
+            android:layout_width="258dp"
+            android:layout_height="26dp"
+            android:text="@={viewPostViewModel.postModel.title}"
+            android:textColor="@color/light_black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView_viewPost_date"
+            app:layout_constraintEnd_toEndOf="@+id/Scroller"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/Scroller"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+            <ScrollView
+                android:id="@+id/Scroller"
+                android:layout_width="319dp"
+                android:layout_height="419dp"
+                android:scrollbars="vertical"
+                android:fillViewport="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.358" >
+
+                <TextView
+                    android:id="@+id/textView_viewPost_content"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:textColor="@color/light_black"
+                    android:textSize="18sp"
+                    android:text="@={viewPostViewModel.postModel.content}"
+/>
+            </ScrollView>
+
+        <TextView
+            android:id="@+id/textView_viewPost_date"
+            android:layout_width="110dp"
+            android:layout_height="25dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/light_black"
+            android:textSize="18sp"
+            android:text="@={viewPostViewModel.postModel.date}"
+            app:layout_constraintBottom_toTopOf="@+id/Scroller"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.847"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="93dp"
+            android:layout_height="87dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/Scroller"
+            app:layout_constraintTop_toBottomOf="@+id/Scroller"
+            app:layout_constraintVertical_bias="0.013"
+            android:src="@{viewPostViewModel.postImg}"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="90dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/btn_off_white"
+            android:onClick="@{()->viewPostViewModel.onClickGoodButton()}"
+            android:text="@={viewPostViewModel.goodMsg}"
+            android:textAllCaps="false"
+            android:textColor="@color/light_black"
+            app:layout_constraintEnd_toEndOf="@+id/Scroller"
+            app:layout_constraintTop_toBottomOf="@+id/Scroller" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="90dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="46dp"
+            android:layout_marginBottom="32dp"
+            android:backgroundTint="@color/btn_off_white"
+            android:onClick="@{()->viewPostViewModel.onClickBadButton()}"
+            android:text="@={viewPostViewModel.badMsg}"
+            android:textAllCaps="false"
+            android:textColor="@color/light_black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/button5" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="60dp"
+            android:layout_height="26dp"
+            android:text="Title:"
+            android:textColor="@color/light_black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_viewPost_title"
+            app:layout_constraintEnd_toStartOf="@+id/textView_viewPost_title"
+            app:layout_constraintHorizontal_bias="0.978"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView_viewPost_title" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

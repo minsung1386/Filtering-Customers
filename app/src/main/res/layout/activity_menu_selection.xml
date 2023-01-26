@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="menuSelectionViewModel"
+            type="edu.skku.cs.final_project.MenuSelectionViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/off_white"
+        tools:context=".MenuSelectionActivity">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="256dp"
+            android:text="Report"
+            android:backgroundTint="@color/btn_off_white"
+            android:textColor="@color/light_black"
+            android:textAllCaps="false"
+            android:textSize="17sp"
+            android:onClick="@{()->menuSelectionViewModel.clickNewPost()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:backgroundTint="@color/btn_off_white"
+            android:text="Search"
+            android:textAllCaps="false"
+            android:textColor="@color/light_black"
+            android:textSize="17sp"
+            android:onClick="@{()->menuSelectionViewModel.clickViewPosts()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="197dp"
+            android:layout_height="126dp"
+            android:layout_marginTop="68dp"
+            android:text="@={menuSelectionViewModel.username}"
+            android:textAlignment="center"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

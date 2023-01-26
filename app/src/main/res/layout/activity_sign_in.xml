@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="signInViewModel"
+            type="edu.skku.cs.final_project.SignInViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/off_white"
+        tools:context=".SignInActivity">
+        <TextView
+            android:layout_width="323dp"
+            android:layout_height="125dp"
+            android:text="FILTERING CUSTOMERS"
+            android:textAlignment="textStart"
+            android:textSize="45sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.194" />
+
+        <Button
+            android:id="@+id/button_signin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Sign in"
+            android:backgroundTint="@color/btn_off_white"
+            android:textColor="@color/light_black"
+            android:textSize="17sp"
+            android:textAllCaps="false"
+            android:onClick="@{()->signInViewModel.onButtonSignInClicked()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText_password" />
+        <EditText
+            android:id="@+id/editText_username"
+            android:layout_width="268dp"
+            android:layout_height="56dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Username"
+            android:textColor="@color/light_black"
+            android:text="@={signInViewModel.inputUsername}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editText_password"
+            android:layout_width="268dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:hint="Password"
+            android:textColor="@color/light_black"
+            android:text="@={signInViewModel.inputPassword}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText_username" />
+
+        <TextView
+            android:id="@+id/textView_signup_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="68dp"
+            android:text="Don't have an account?"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button_signup"
+            app:layout_constraintHorizontal_bias="0.779"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/button_signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="72dp"
+            android:backgroundTint="@color/btn_off_white"
+            android:textColor="@color/light_black"
+            android:textSize="17sp"
+            android:text="Create"
+            android:onClick="@{()->signInViewModel.onButtonCreateAccountClicked()}"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_signup_desc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView_signup_desc" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:textColor="@color/red"
+            android:text="@={signInViewModel.msgString}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_signin" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

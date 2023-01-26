@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="createAccountViewModel"
+            type="edu.skku.cs.final_project.CreateAccountViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/off_white"
+        tools:context=".CreateAccountActivity">
+
+        <TextView
+            android:layout_width="323dp"
+            android:layout_height="125dp"
+            android:text="Create Account"
+            android:textAlignment="center"
+            android:textSize="45sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.194" />
+
+        <Button
+            android:id="@+id/button_signin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Sign Up"
+            android:backgroundTint="@color/btn_off_white"
+            android:textColor="@color/light_black"
+            android:textSize="17sp"
+            android:textAllCaps="false"
+            android:onClick="@{()->createAccountViewModel.onButtonSignUpClicked()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText_password" />
+        <EditText
+            android:id="@+id/editText_username"
+            android:layout_width="268dp"
+            android:layout_height="56dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Username"
+            android:textColor="@color/light_black"
+            android:text="@={createAccountViewModel.inputUsername}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editText_password"
+            android:layout_width="268dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:hint="Password"
+            android:textColor="@color/light_black"
+            android:text="@={createAccountViewModel.inputPassword}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText_username" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
