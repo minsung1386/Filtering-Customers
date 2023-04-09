@@ -70,3 +70,20 @@
 
     이미지를 json과 같은 문자열 기반 데이터 안에 저장하기 위해 Base64로 인코딩하여 저장하고 불러올 땐 디코딩하는 과정을 거쳤다. 그리고 앞선 MVVM 패턴과 연관이 되기도 하지만 디코딩하여 데이터 바인딩과 Binding Adapter를 이용해 ImageView로 출력하는 과정은 깊은 이해와 많은 시간을 요구했다.
 
+<br>
+
+## Appendix
+
+__MVVM 패턴__
+
+이 어플리케이션에는 앞서 기술한 것처럼 MVVM 패턴을 사용했다.
+
+__Model__ 은 오직 데이터만 가지고 있도록 구현했다.
+
+__View__ 는 UI와 필수적인 UI 로직으로 구성했다. 여기서 UI는 화면에 보이는 요소들을 의미하고 UI 로직은 Context를 필요로 하는 동작이다. 한 액티비티에서 다른 액티비티를 실행하거나, 갤
+러리로부터 이미지를 불러오는 동작은 그 액티비티의 Context를 필요로 한다. 하지만 ViewModel이 액티비티의 Context를 가지고 있으면 memory leak와 같은 문제가 발생할 수 있
+다. 따라서 ViewModel이 View로 하여금 startActivity와 같은 함수를 호출하도록 했다.
+
+__ViewModel__ 은 앞서 기술한 UI로직을 제외한 액티비티에서 수행되는 모든 동작을 처리하도록 했다. 데이터로는 Model의 인스턴스, Model을 UI에 구성하기 위한 필수적인 데이터, UI로부터
+전달되는 input data 등을 가지며, 로직으로는 Http통신, Model 업데이트, UI 수정 등을 가진다. 이 때, UI로부터 전달되는 input 데이터는 Data Binding을 통해 ViewModel로 전달되도록 했고
+ViewModel은 전달받은 데이터를 Model에 업데이트하도록 했다.
