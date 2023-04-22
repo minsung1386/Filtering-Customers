@@ -1,6 +1,6 @@
 # Filtering Customers 
 
-[Korean README](./README_KOR.md)
+[Korean README](./README_KR.md)
 
 ## Description
 
