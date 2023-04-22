@@ -44,7 +44,8 @@ Initially, the idea was to create a blacklist where sellers could share informat
 
 <br>
 
-## Network API design (Communication Protocol between AWS lambda and application)
+## Network API design (Communication Protocol bet
+en AWS lambda and application)
 All communication in this application is implemented to access AWS S3 through boto3 in Python.
 
 First, the login process checks whether the ID and password match by accessing the file where they are registered. The flag indicating whether the ID and password match is received as a response, and the login result is displayed on the screen.
@@ -68,7 +69,7 @@ When a user views a post found through a search, the application retrieves the p
 
 * __Save image and display__
 
-    Regarding image saving and displaying, we encoded the images using Base64 to store them in string-based data such as JSON, and then decoded them to display on the ImageView using data binding and Binding Adapter. This process required a deep understanding and a lot of time.
+    Regarding image saving and displaying, I encoded the images using Base64 to store them in string-based data such as JSON, and then decoded them to display on the ImageView using data binding and Binding Adapter. This process required a deep understanding and a lot of time.
 
 <br>
 
