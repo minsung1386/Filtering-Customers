@@ -1,7 +1,5 @@
 # Filtering Customers (악성 고객 신고 커뮤니티)
 
-[ENG](#index-test)
-
 ## Description
 
 [기사](https://www.youtube.com/watch?v=uD4xbRCqR00)를 보고 이 어플리케이션을 만들기로 결정하였다. 해당 기사는 논란이 되고 있는 배달 어플의 악성 고객들에 관한 것이다. 
